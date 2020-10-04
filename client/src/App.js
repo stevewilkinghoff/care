@@ -19,6 +19,7 @@ import FuckingShit from '../src/Users/Shitty';
 import Appy1 from '../src/Users/ResidentsPage1';
 import ResAssessmentTool from '../src/components/ResidentAssessment/ResidentAssessmentTool';
 import EmployeeAdd from '../src/components/Employees/EmployeeAdd';
+import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeOrientation';
 
 
 //import FileUpload from '../src/components/Uploads/fuckaround';
@@ -50,6 +51,7 @@ class App extends Component {
             <Route exact path="/residents" component={Appy1}/>
             <Route exact path="/residentassessment" component={ResAssessmentTool}/>
             <Route exact path="/employeeadd" component={EmployeeAdd}/>
+            <Route exact path="/employeeorientation" component={EmployeeOrientation}/>
             
             
             

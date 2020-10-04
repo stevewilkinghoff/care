@@ -269,6 +269,62 @@ const StaffMemberSchema = mongoose.Schema({
 timestamps: true
 });
 
+const StaffOrientationSchema = mongoose.Schema({
+  orientHowToCreateOwnAccount:Boolean,
+  orientNonDiscNonSolicitNonCompet:Boolean,
+  orientOathConf:Boolean,
+  orientContractEmployment:Boolean,
+  orientCertificates:Boolean,
+  orientCrimRecordCheck:Boolean,
+  orientFinancialInfo:Boolean,
+  orientIntroToStaffStructure:Boolean,
+  orientJobDescrRolesResp:Boolean,
+  orientDiversityEquality:Boolean,
+  orientDressCode:Boolean,
+  orientAccessToCommCarePolsProcs:Boolean,
+  orientAccessRoutes:Boolean,
+  orientWashroomHandWashFac:Boolean,
+  orientFireExitsAndProc:Boolean,
+  orientTelephoneAccessPts:Boolean,
+  orientFireEvacProc:Boolean,
+  orientFireExtSprink:Boolean,
+  orientContingPlan:Boolean,
+  orientWaterSafeyProc:Boolean,
+  orientCompletingHousekeepSafey:Boolean,
+  orientIntranet:Boolean,
+  orientStaffSchedules:Boolean,
+  orientStoringPersonalItems:Boolean,
+  orientTimesheetsPay:Boolean,
+  orientPolRecGifts:Boolean,
+  orientDiscAndGrievance:Boolean,
+  orientProcForReportAbsenceIllness:Boolean,
+  orientIndivInfoSheet:Boolean,
+  orientSuperApprais:Boolean,
+  orientMentoringArrang:Boolean,
+  orientTrainAndDev:Boolean,
+  orientProcForReportAndRecordAccIncid:Boolean,
+  orientFamiliarizeAccIncidDoc:Boolean,
+  orientNotifOfRelevantPeople:Boolean,
+  orientFirstAidProv:Boolean,
+  orientCarePlansMedCharts:Boolean,
+  orientAdminOfMed:Boolean,
+  orientAccessToRecsConfidDataProt:Boolean,
+  orientAdultProtPolsProcs:Boolean,
+  orientMovingAndHandling:Boolean,
+  orientOperOfAidsAndHoists:Boolean,
+  orientSafeFoodHandling:Boolean,
+  orientInfecControlPPE:Boolean,
+  orientHandwashingTech:Boolean,
+  orientStaffFirstName:String,
+  orientStaffLastName:String,
+  orientSuperFirstName:String,
+  orientSuperLastName:String,
+  orientDate:Date,
+  orientIEmployeeSignOff:Boolean
+  }, {
+timestamps: true
+});
+
 
 const Note = mongoose.model("Note", NoteSchema, 'testcollection');
 const Evening = mongoose.model("Evening", EveningDCChecklistSchema, 'testcollection');
@@ -276,6 +332,7 @@ const Night = mongoose.model("Night", NightDCChecklistSchema, 'testcollection');
 const Resident = mongoose.model("Resident", ResidentSchema, 'residents');
 const Assessment = mongoose.model("Assessment", AssessmentSchema, 'assessments');
 const EmployeeAdd = mongoose.model("Employee", StaffMemberSchema, 'employees');
+const StaffOrientationAdd = mongoose.model("Orientation", StaffOrientationSchema, 'orientations')
 
 
 // Create a route for morninglist api posts
@@ -492,6 +549,69 @@ app.post('/api/employeeadd', (req, res) => {
     staffCityAddress: req.body.staffCityAddress,
     staffPostcodeAddress: req.body.staffPostcodeAddress
 
+    });
+  note.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.send(e);
+  })
+});
+
+// Create a route for employee add api posts
+app.post('/api/employeeorientation', (req, res) => {
+  console.log(req.body);
+  const note = new StaffOrientationAdd({
+    orientHowToCreateOwnAccount: req.body.orientHowToCreateOwnAccount,
+    orientNonDiscNonSolicitNonCompet: req.body.orientNonDiscNonSolicitNonCompet,
+    orientOathConf: req.body.orientOathConf,
+    orientContractEmployment: req.body.orientContractEmployment,
+    orientCertificates: req.body.orientCertificates,
+    orientCrimRecordCheck: req.body.orientCrimRecordCheck,
+    orientFinancialInfo: req.body.orientFinancialInfo,
+    orientIntroToStaffStructure: req.body.orientIntroToStaffStructure,
+    orientJobDescrRolesResp: req.body.orientJobDescrRolesResp,
+    orientDiversityEquality: req.body.orientDiversityEquality,
+    orientDressCode: req.body.orientDressCode,
+    orientAccessToCommCarePolsProcs: req.body.orientAccessToCommCarePolsProcs,
+    orientAccessRoutes: req.body.orientAccessRoutes,
+    orientWashroomHandWashFac: req.body.orientWashroomHandWashFac,
+    orientFireExitsAndProc: req.body.orientFireExitsAndProc,
+    orientTelephoneAccessPts: req.body.orientTelephoneAccessPts,
+    orientFireEvacProc: req.body.orientFireEvacProc,
+    orientFireExtSprink: req.body.orientFireExtSprink,
+    orientContingPlan: req.body.orientContingPlan,
+    orientWaterSafeyProc: req.body.orientWaterSafeyProc,
+    orientCompletingHousekeepSafey: req.body.orientCompletingHousekeepSafey,
+    orientIntranet: req.body.orientIntranet,
+    orientStaffSchedules: req.body.orientStaffSchedules,
+    orientStoringPersonalItems: req.body.orientStoringPersonalItems,
+    orientTimesheetsPay: req.body.orientTimesheetsPay,
+    orientPolRecGifts: req.body.orientPolRecGifts,
+    orientDiscAndGrievance: req.body.orientDiscAndGrievance,
+    orientProcForReportAbsenceIllness: req.body.orientProcForReportAbsenceIllness,
+    orientIndivInfoSheet: req.body.orientIndivInfoSheet,
+    orientSuperApprais: req.body.orientSuperApprais,
+    orientMentoringArrang: req.body.orientMentoringArrang,
+    orientTrainAndDev: req.body.orientTrainAndDev,
+    orientProcForReportAndRecordAccIncid: req.body.orientProcForReportAndRecordAccIncid,
+    orientFamiliarizeAccIncidDoc: req.body.orientFamiliarizeAccIncidDoc,
+    orientNotifOfRelevantPeople: req.body.orientNotifOfRelevantPeople,
+    orientFirstAidProv: req.body.orientFirstAidProv,
+    orientCarePlansMedCharts: req.body.orientCarePlansMedCharts,
+    orientAdminOfMed: req.body.orientAdminOfMed,
+    orientAccessToRecsConfidDataProt: req.body.orientAccessToRecsConfidDataProt,
+    orientAdultProtPolsProcs: req.body.orientAdultProtPolsProcs,
+    orientMovingAndHandling: req.body.orientMovingAndHandling,
+    orientOperOfAidsAndHoists: req.body.orientOperOfAidsAndHoists,
+    orientSafeFoodHandling: req.body.orientSafeFoodHandling,
+    orientInfecControlPPE: req.body.orientInfecControlPPE,
+    orientHandwashingTech: req.body.orientHandwashingTech,
+    orientStaffFirstName: req.body.orientStaffFirstName,
+    orientStaffLastName: req.body.orientStaffLastName,
+    orientSuperFirstName: req.body.orientSuperFirstName,
+    orientSuperLastName: req.body.orientSuperLastName,
+    orientDate: req.body.orientDate,
+    orientIEmployeeSignOff: req.body.orientIEmployeeSignOff
     });
   note.save().then((doc) => {
     res.send(doc);
