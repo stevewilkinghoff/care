@@ -1,0 +1,6 @@
+.signatureCanvas{
+    border: 1px red;
+    width: 500px;
+    min-height:250px;
+    background-color: green;
+}
