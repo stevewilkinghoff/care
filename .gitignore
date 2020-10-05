@@ -2,3 +2,4 @@ images
 keys
 aws
 config
+client/src/config/aws
