@@ -72,6 +72,13 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
 });
 
+if (process.env.NODE_ENV==='production'){
+    // Express will serve up production assets
+    app.use(express.static('client/build'));
+
+    // Express will serve up html file if it doesnt' recognize route
+}
+
 
 const PORT = process.env.PORT || 4001;
 // listen for requests
