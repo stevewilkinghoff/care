@@ -11,6 +11,8 @@ const assessmentRoutes = require('./assessmentsroute');
 
 const employeeRoutes = require('./employeesroute');
 
+const employeeOrientationRoutes = require('../Employees/employeeorientationsroute');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -31,7 +33,7 @@ app.use('/api/users', usersRoutes);
 app.use('/api/residents', residentRoutes);
 app.use('/api/assessments', assessmentRoutes);
 app.use('/api/employees', employeeRoutes);
-app.use('/api/employeeorientataion', employeeOrientationRoutes);
+app.use('/api/employeeorientation', employeeOrientationRoutes);
 
 //app.use((req, res, next) => {
 //  const error = new HttpError('Could not find this route.', 404);

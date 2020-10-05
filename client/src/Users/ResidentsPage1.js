@@ -9,7 +9,7 @@ const Appy1 = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://localhost:4002/api/residents',
+                'http://localhost:4001/api/listresidents',
                
         );
         setData(result.data);

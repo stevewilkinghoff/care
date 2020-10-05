@@ -11,7 +11,7 @@ import Header from './components/Header';
 import ResidentAdd from '../src/components/ResidentSetUp/ResidentAdd';
 import FileUp from '../src/components//Uploads/testupload';
 import ShitFuckDamn from '../src/components/Uploads/ShitFuckDamn';
-import ListResidents from '../src/components/ResidentSetUp/ListResidents';
+//import ListResidents from '../src/components/ResidentSetUp/ListResidents';
 import Users from '../src/Users//UsersPage';
 import UserRender from './components/ResidentSetUp/UserRender';
 import Appy from '../src/Users/ResidentsPage';
@@ -20,6 +20,7 @@ import Appy1 from '../src/Users/ResidentsPage1';
 import ResAssessmentTool from '../src/components/ResidentAssessment/ResidentAssessmentTool';
 import EmployeeAdd from '../src/components/Employees/EmployeeAdd';
 import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeOrientation';
+
 
 
 //import FileUpload from '../src/components/Uploads/fuckaround';
@@ -45,7 +46,6 @@ class App extends Component {
             <Route exact path="/api/morninglist" component={MorningList}/>
             <Route exact path="/addresident" component={ResidentAdd}/>
             <Route exact path="/shit" component={ShitFuckDamn}/>
-            <Route exact path="/api/listresidents" component={ListResidents}/>
             <Route exact path="/residentlisting" component={UserRender}/>
             <Route exact path="/residentpage" component={Users}/>
             <Route exact path="/residents" component={Appy1}/>
