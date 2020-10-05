@@ -31,3 +31,5 @@ const PORT = process.env.PORT || 5000;
 //const PORT = process.env.PORT || 4001;
 console.log('Care Cottages Node Server running on port ' + PORT);
 app.listen(PORT);
+
+registerServiceWorker(); 
