@@ -3,3 +3,4 @@ keys
 aws
 config
 client/src/config/aws
+node_modules
