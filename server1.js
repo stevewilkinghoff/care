@@ -72,8 +72,10 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
 });
 
+
+const PORT = process.env.PORT || 4001;
 // listen for requests
-app.listen(4001, () => {
+app.listen(PORT, () => {
     console.log("Server is listening on port 4001");
 });
 
