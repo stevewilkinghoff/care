@@ -38,8 +38,9 @@ app.get('/', (req, res) => {
 });
 
 // listen for requests
-app.listen(4001, () => {
-    console.log("Server is listening on port 4001");
+const PORT = process.env.PORT || 4001;
+app.listen(PORT, () => {
+    console.log("Server is listening on port" + PORT);
 });
 
 // Configuring the database

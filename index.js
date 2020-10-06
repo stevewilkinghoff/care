@@ -130,7 +130,7 @@ if (process.env.NODE_ENV==='production'){
 const PORT = process.env.PORT || 4001;
 // listen for requests
 app.listen(PORT, () => {
-    console.log("Server is listening on port 4001");
+    console.log("Server is listening on port"+PORT);
 });
 
 // Configuring the database
