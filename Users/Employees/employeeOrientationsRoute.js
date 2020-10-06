@@ -1,7 +1,7 @@
 const express = require('express');
 //const { check } = require('express-validator');
 
-const EmployeeOrientationController = require('./employeeOrientationController');
+const EmployeeOrientationController = require('./employeeorientationcontroller');
 
 const router = express.Router();
 
