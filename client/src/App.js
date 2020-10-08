@@ -23,6 +23,8 @@ import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeO
 import MorningTasks from './components/DailyTasks/MorningTasks';
 import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
 import EveningTasks from './components/DailyTasks/EveningTasks';
+import Cottages from './components/Cotages';
+import DailyTasksPage from './components/Pages/DailyTasksPage';
 
 
 
@@ -58,6 +60,8 @@ class App extends Component {
             <Route exact path="/morningtasks" component={MorningTasks}/>
             <Route exact path="/afternoontasks" component={AfternoonTasks}/>
             <Route exact path="/eveningtasks" component={EveningTasks}/>
+            <Route exact path="/cottages" component={Cottages}/>
+            <Route exact path="/dailytaskspage" component={DailyTasksPage}/>
             
             
             

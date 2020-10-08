@@ -39,18 +39,9 @@ class Header extends React.Component {
                 <NavDropdown.Item href="/employeeorientation">Employee Orientation</NavDropdown.Item>
                 <NavDropdown.Divider />
             </NavDropdown>
-                <NavDropdown title="Cottages" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/morningtasks">Morning Task List</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2">Cottage 2</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">Cottage 3</NavDropdown.Item>
-                <NavDropdown.Divider />
-            </NavDropdown>
-            
-                </Nav>
+            <Nav.Link href="/cottages">Cottages</Nav.Link>
+            </Nav>
             </Navbar>
-            <br />
             </>
         );
 }
