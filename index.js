@@ -1,45 +1,3 @@
-//Old index.js stuff below
-
-//const express = require('express');
-//const mongoose = require('mongoose');
-//const http = require('http');
-
-//const keys = require('./config/keys');
-
-
-//const app = express();
-
-//app.get('/', function (req, res) {
-//    res.send('Hello World!');
-//  });
-
-//app.get('/api/resident', function(req, res) {
-//    res.send("This is a page to add stuff to resident");
-//});
-
-//app.get('/resident', function(req, res) {
-//    res.send('This is a test resident page.');
-//});
-
-//if (process.env.NODE_ENV==='production'){
-    // Express will serve up production assets
-//    app.use(express.static('client/build'));
-
-    // Express will serve up html file if it doesnt' recognize route//
-//}
-
-
-//const PORT = process.env.PORT || 5000;
-//const PORT = process.env.PORT || 4001;
-//console.log('Care Cottages Node Server running on port ' + PORT);
-//app.listen(PORT);
-
-//registerServiceWorker(); 
-
-
-
-//************* */
-
 //This works - creates api that creates record!!!!
 
 
@@ -55,6 +13,8 @@ const employeeOrientationRoutes = require('./Users/Employees/employeeorientation
 const residentSchema = require('./Users/residentsmodel');
 const assessmentSchema = require('./Users/assessmentsmodel');
 const employeeSchema = require('./Users/Employees/employeemodel');
+const morningtasksSchema = require('./Users/DailyTasks/morningstasksmodel');
+const afternoontasksSchema = require('./Users/DailyTasks/afternoontasksmodel');
 
 
 const cors = require('cors');
@@ -94,6 +54,7 @@ app.use('/api/listassessments', assessmentRoutes);
 app.use('/api/listemployees', employeeRoutes);
 // Setup route to list orientation
 app.use('/api/listemployeeorientations', employeeOrientationRoutes);
+// Setup route to list
 
 app.use((error, req, res, next) => {
     if(res.headerSent) {
@@ -116,7 +77,7 @@ app.get('/', (req, res) => {
 
 if (process.env.NODE_ENV==='production'){
     // Express will serve up production assets
-    app.use(express.static(path.join(__dirname, './client/build')));
+    app.use(express.static('client/build'));
 
     // Express will serve up html file if it doesnt' recognize route
     const path = require('path');
@@ -130,7 +91,7 @@ if (process.env.NODE_ENV==='production'){
 const PORT = process.env.PORT || 4001;
 // listen for requests
 app.listen(PORT, () => {
-    console.log("Server is listening on port"+PORT);
+    console.log("Server is listening on port "+ PORT);
 });
 
 // Configuring the database
@@ -245,120 +206,14 @@ const NightDCChecklistSchema = mongoose.Schema({
 
 // Create model / Schema for Resident
 const ResidentSchema = mongoose.residentSchema;
-//const ResidentSchema = mongoose.Schema({
-//  residentFirstName: String,
-//  residentLastName: String,
-//  residentMoveInDate: Date,
-//  residentDOB: Date,
-//  residentCottage: String,
-//  residentRoomNo: String,
-//  residentAhcNo: String,
-//  NOK1FirstName:String,
-//  NOK1LastName:String,
-//  NOK1PhoneNo:String,
-//  NOK1Email:String,
-//  doctorName:String,
-//  doctorClinic:String,
-//  doctorEmail:String,
-//  doctorPhone:String,
-//  doctorCell:String,
-//  doctorAddress:String,
-//  doctorCity:String,
-//  doctorPostcode:String,
-//  nurseFirstName:String,
-// nurseLastName:String,
-//  nursePhone:String,
-//  nurseCell:String,
-//  nurseEmail:String,
-//  powerOfAttorney:Buffer,
-//  photo:Buffer
-//}, {
-//  timestamps: true
-//});
 
-const AssessmentSchema = mongoose.assessmentSchema;//({
-//  assessmentDate:Date,
-//  assessorFirstName: String,
-//  assessorLastName: String,
-//  assessorSignature: String,
-//  residentMaritalStatus: String,
-//  residentLanguage: String,
-//  residentLivingArrangement: String,
-//  residentAddressStreet: String,
-//  residentAddressCity: String,
-//  residentAddressProv: String,
-//  residentAddressPostCode: String,
-//  residentCurrentLocation: String,
-//  residentMedicallyStable: String,
-//  residentMentalStatus: String,
-//  residentOriented: String,
-//  residentPOA: String,
-//  medicalConditions: String,
-//  currentMedication: String,
-//  alergies: String,
-// familyDoctor: String,
-//  residentPhone: String,
-//  residentEmail: String,
-//  hobbiesAndSpecialInterests: String,
-//  eating: String,
-//  eatingNotes: String,
-//  transfer: String,
-//  transferNotes: String,
-//  mobilityWalking: String,
-//  mobilityWalkingNotes: String,
-//  mobilityWheelChair: String,
-//  mobilityWheelChairNotes: String,
-//  toileting: String,
-//  toiletingNotes: String,
-//  bathing: String,
-//  bathingNotes: String,
-//  hygiene: String,
-//  hygieneNotes: String,
-//  dressing: String,
-//  dressingNotes: String,
-//  orientationDementia: String,
-//  orientationDementiaNotes: String,
-//  communicationExpressive: String,
-//  communicationExpressiveNotes: String,
-//  communicationReceptive: String,
-//  communicationReceptiveNotes: String,
-//  medicationSelfAdmin: String,
-//  medicationSelfAdminNotes: String,
-//  behaviours: String,
-//  behavioursNotes: String,
-//  mentalHealthSubstanceAbuse: String,
-//  mentalHealthSubstanceAbuseNotes: String,
-//  hearing: String,
-//  hearingNotes: String,
-//  oralAndVisionCare: String,
-//  oralAndVisionCareNotes: String,
-//  socialSupport: String,
-//  socialSupportNotes: String,
-//  assessmentValue: String,
-//  assessmentValuePercent: String,
-//  skilledNursingServicesPressureUlcer: String,
-//  skilledNursingServicesIVHyperal: String,
-//  applicantAdheresToMedicalCareYes: String,
-//  applicantAdheresToMedicalCareNo: String,
-//  assessmentSummary: String,
-//  }, {
-//timestamps: true
-//});
+const AssessmentSchema = mongoose.assessmentSchema;
 
-const StaffMemberSchema = mongoose.employeeSchema;//({
-//  staffEmploymentDate: Date,
-//  staffLocation:String,
-//  staffFirstName: String,
-//  staffLastName: String,
-//  staffPhoto: Buffer,
-//  staffPhone: String,
-//  staffEmail: String,
-//  staffStreetAddress: String,
-//  staffCityAddress: String,
-//  staffPostcodeAddress: String
-//  }, {
-//timestamps: true
-//});
+const StaffMemberSchema = mongoose.employeeSchema;
+
+const MorningTasksSchema = mongoose.morningtasksSchema;
+
+const AfternoonTasksSchema = mongoose.afternoontaskSchema;
 
 const StaffOrientationSchema = mongoose.Schema({
   orientHowToCreateOwnAccount:Boolean,
@@ -423,7 +278,9 @@ const Night = mongoose.model("Night", NightDCChecklistSchema, 'testcollection');
 const Resident = mongoose.model("Resident", ResidentSchema, 'residents');
 const Assessment = mongoose.model("Assessment", AssessmentSchema, 'assessments');
 const EmployeeAdd = mongoose.model("Employee", StaffMemberSchema, 'employees');
-const StaffOrientationAdd = mongoose.model("Orientation", StaffOrientationSchema, 'orientations')
+const StaffOrientationAdd = mongoose.model("Orientation", StaffOrientationSchema, 'orientations');
+const MorningTaskAdd = mongoose.model("MorningTasks", MorningTasksSchema, 'dailytasks');
+const AfternoonTaskAdd = mongoose.model("AfternoonTasks", AfternoonTasksSchema, 'dailytasks')
 
 
 // Create a route for morninglist api posts
@@ -624,7 +481,6 @@ app.post('/api/assessmentadd', (req, res) => {
     res.send(e);
   })
 });
-
 // Create a route for employee add api posts
 app.post('/api/employeeadd', (req, res) => {
   console.log(req.body);
@@ -639,7 +495,6 @@ app.post('/api/employeeadd', (req, res) => {
     staffStreetAddress: req.body.staffStreetAddress,
     staffCityAddress: req.body.staffCityAddress,
     staffPostcodeAddress: req.body.staffPostcodeAddress
-
     });
   note.save().then((doc) => {
     res.send(doc);
@@ -647,6 +502,78 @@ app.post('/api/employeeadd', (req, res) => {
     res.send(e);
   })
 });
+
+// Create a route for Morning Tasks Morning add api posts
+app.post('/api/dailytasksadd', (req, res) => {
+    console.log(req.body);
+    const note = new MorningTaskAdd({
+        taskListDate: req.body.taskListDate,
+        taskListShift: req.body.taskListShift,
+        taskListStaffName: req.body.taskListStaffName,
+        taskListCareForResidents: req.body.taskListCareForResidents,
+        taskListAdministerMedicine: req.body.taskListAdministerMedicine,
+        taskListScheduledShowersWaterTempTest: req.body.taskListScheduledShowersWaterTempTest,
+        taskListScheduledRoomCleaning: req.body.taskListScheduledRoomCleaning,
+        taskListGrooming: req.body.taskListGrooming,
+        taskListResidentLaundry: req.body.taskListResidentLaundry,
+        taskListActivities: req.body.taskListActivities,
+        taskListDailyNotes: req.body.taskListDailyNotes,
+        taskListPrepBreakfast: req.body.taskListPrepBreakfast,
+        taskListPrepLunch: req.body.taskListPrepLunch,
+        taskListPrepSnack: req.body.taskListPrepSnack,
+        taskListSanitizeCountersTable: req.body.taskListSanitizeCountersTable,
+        taskListSaltStepsAndShovel: req.body.taskListSaltStepsAndShovel,
+        taskListEnterMaintNeeded: req.body.taskListEnterMaintNeeded,
+        taskListCommunicationNoted: req.body.taskListCommunicationNoted,
+        taskListCheckPerimeterForHazards: req.body.taskListCheckPerimeterForHazards,
+        taskListCheckPerimeterForMaintNeeded: req.body.taskListCheckPerimeterForMaintNeeded,
+        taskListCheckDoorsSecured: req.body.taskListCheckDoorsSecured,
+        taskListSignOff: req.body.taskListSignOff
+      });
+    note.save().then((doc) => {
+      res.send(doc);
+    }, (e) => {
+      res.send(e);
+    })
+  });
+
+  // Create a route for Afternoon Tasks Morning add api posts
+app.post('/api/dailytasksadd', (req, res) => {
+  console.log(req.body);
+  const note = new AfternoonTaskAdd({
+      taskListDate: req.body.taskListDate,
+      taskListShift: req.body.taskListShift,
+      taskListStaffName: req.body.taskListStaffName,
+      taskListCareForResidents: req.body.taskListCareForResidents,
+      taskListAdministerMedicine: req.body.taskListAdministerMedicine,
+      taskListScheduledShowersWaterTempTest: req.body.taskListScheduledShowersWaterTempTest,
+      taskListScheduledRoomCleaning: req.body.taskListScheduledRoomCleaning,
+      taskListGrooming: req.body.taskListGrooming,
+      taskListResidentLaundry: req.body.taskListResidentLaundry,
+      taskListActivities: req.body.taskListActivities,
+      taskListDailyNotes: req.body.taskListDailyNotes,
+      taskListPrepDinner: req.body.taskListPrepDinner,
+      taskListSanitizeCountersTable: req.body.taskListSanitizeCountersTable,
+      taskListSweepVacMop: req.body.taskListSweepVacMop,
+      taskListCleanSanitizeBathTubToiletCountersMirror: req.body.taskListCleanSanitizeBathTubToiletCountersMirror,
+      taskListStockPaperTowelToiletPaperSoaps: req.body.taskListStockPaperTowelToiletPaperSoaps,
+      taskListCheckDoorsSecured: req.body.taskListCheckDoorsSecured,
+      taskListDoLaundry: req.body.taskListDoLaundry,
+      taskListUnloadDishwasher: req.body.taskListUnloadDishwasher,
+      taskListEnterMaintNeeded: req.body.taskListEnterMaintNeeded,
+      taskListCommunicationNoted: req.body.taskListCommunicationNoted,
+      taskListCommunicationBookTexted: req.body.taskListCommunicationBookTexted,
+      taskListCleanOrganizeFridge: req.body.taskListCleanOrganizeFridge,
+      taskListWashThrowsBlankets: req.body.taskListWashThrowsBlankets,
+      taskListSignOff: req.body.taskListSignOff
+    });
+  note.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.send(e);
+  })
+});
+
 
 // Create a route for employee add api posts
 app.post('/api/employeeorientation', (req, res) => {
@@ -710,6 +637,8 @@ app.post('/api/employeeorientation', (req, res) => {
     res.send(e);
   })
 });
+
+
 
 //app.get('/api/listresidents', (req, res, next) => {
 //  Resident.find().exec().then((doc) => {

@@ -20,6 +20,8 @@ import Appy1 from '../src/Users/ResidentsPage1';
 import ResAssessmentTool from '../src/components/ResidentAssessment/ResidentAssessmentTool';
 import EmployeeAdd from '../src/components/Employees/EmployeeAdd';
 import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeOrientation';
+import MorningTasks from './components/DailyTasks/MorningTasks';
+import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
 
 
 
@@ -52,6 +54,8 @@ class App extends Component {
             <Route exact path="/residentassessment" component={ResAssessmentTool}/>
             <Route exact path="/employeeadd" component={EmployeeAdd}/>
             <Route exact path="/employeeorientation" component={EmployeeOrientation}/>
+            <Route exact path="/morningtasks" component={MorningTasks}/>
+            <Route exact path="/afternoontasks" component={AfternoonTasks}/>
             
             
             
