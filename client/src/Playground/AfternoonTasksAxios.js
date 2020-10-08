@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class DailyTasks extends React.Component {
+export default class AfternoonTasks extends React.Component {
   state = {
     taskListDate: '',
     taskListShift:'',
@@ -90,7 +90,7 @@ export default class DailyTasks extends React.Component {
         taskListSignOff: this.state.taskListSignOff
         };
 
-    axios.post(`http://localhost:4001/api/dailytasksadd`, { dailytasks })
+    axios.post(`http://localhost:4001/api/afternoontasksadd`, { dailytasks })
       .then(res => {
         console.log(res);
         console.log(res.data);

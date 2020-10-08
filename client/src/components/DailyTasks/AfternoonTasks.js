@@ -65,7 +65,7 @@ const SignupForm = () => {
                  
         axios({
           method: "POST",
-          url: "http://localhost:4001/api/dailytasksadd",
+          url: "http://localhost:4001/api/afternoontasksadd",
           data: values
         })
       //.then(res => {

@@ -63,7 +63,7 @@ const SignupForm = () => {
                  
         axios({
           method: "POST",
-          url: "http://localhost:4001/api/dailytasksadd",
+          url: "http://localhost:4001/api/eveningtasksadd",
           data: values
         })
       //.then(res => {
@@ -150,97 +150,6 @@ const SignupForm = () => {
     <hr/>
     <Row>
     <input checked
-        id="taskListScheduledShowersWaterTempTest"
-        name="taskListScheduledShowersWaterTempTest"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Scheduled showers with water temp test</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListScheduledRoomCleaning"
-        name="taskListScheduledRoomCleaning"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Scheduled room cleaning</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListGrooming"
-        name="taskListGrooming"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Grooming</p>
-    </Row>
-   
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListResidentLaundry"
-        name="taskListResidentLaundry"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Resident laundry (clean lint trap)</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListActivities"
-        name="taskListActivities"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Activities</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListDailyNotes"
-        name="taskListDailyNotes"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Daily notes</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
-        id="taskListPrepDinner"
-        name="taskListPrepDinner"
-        type="checkbox"
-        onChange={formik.handleChange}
-        value={formik.values.checked}
-        style={RowStyle}
-        />
-      <p style={RowStyle}>Prepare dinner</p>
-    </Row>
-
-    <hr/>
-    <Row>
-    <input checked
         id="taskListSanitizeCountersTable"
         name="taskListSanitizeCountersTable"
         type="checkbox"
@@ -255,15 +164,28 @@ const SignupForm = () => {
     <Row>
     <input checked
         id="taskListSweepVacMop"
-        name="taskListSweepVacMop"
+        name="taskListSweepVacMo"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Sweep, vacuum, and mop floors</p>
+      <p style={RowStyle}>Sweep, vacuum, and mop floors (not bedrooms)</p>
     </Row>
 
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListActivityMenuBoards"
+        name="taskListActivityMenuBoards"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Activity and menu boards updated</p>
+    </Row>
+   
     <hr/>
     <Row>
     <input checked
@@ -293,14 +215,14 @@ const SignupForm = () => {
     <hr/>
     <Row>
     <input checked
-        id="taskListCheckDoorsSecured"
-        name="taskListCheckDoorsSecured"
+        id="taskListSanitizeDoorKnobsSwitchesCounterTopsEtc"
+        name="taskListSanitizeDoorKnobsSwitchesCounterTopsEtc"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Check doors (secured)</p>
+      <p style={RowStyle}>Sanitize all doorknobs, light switches, countertops, fridge handles, etc</p>
     </Row>
 
     <hr/>
@@ -313,7 +235,7 @@ const SignupForm = () => {
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Do laundry (clean lint trap)</p>
+      <p style={RowStyle}>Do laundry (if needed - clean lint trap)</p>
     </Row>
 
     <hr/>
@@ -327,6 +249,19 @@ const SignupForm = () => {
         style={RowStyle}
         />
       <p style={RowStyle}>Unload dishwasher (if needed)</p>
+    </Row>
+
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListCleanKitchen"
+        name="taskListCleanKitchen"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Clean kitchens of anything not finished</p>
     </Row>
 
     <hr/>
@@ -358,43 +293,93 @@ const SignupForm = () => {
     <hr/>
     <Row>
     <input checked
-        id="taskListCommunicationBookTexted"
-        name="taskListCommunicationBookTexted"
+        id="taskListNoteSuppliesNeeded"
+        name="taskListNoteSuppliesNeeded"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Communication book texted</p>
+      <p style={RowStyle}>Note supplies running low to supply people</p>
     </Row>
 
     <hr/>
     <Row>
     <input checked
-        id="taskListCleanOrganizeFridge"
-        name="taskListCleanOrganizeFridge"
+        id="taskListDustPicFrames"
+        name="taskListDustPicFrames"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Clean and organize fridge</p>
+      <p style={RowStyle}>Dust picture frames</p>
     </Row>
 
     <hr/>
     <Row>
     <input checked
-        id="taskListWashThrowsBlankets"
-        name="taskListWashThrowsBlankets"
+        id="taskListCleanOrganizeClosetsAndUnderSinks"
+        name="taskListCleanOrganizeClosetsAndUnderSinks"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
         />
-      <p style={RowStyle}>Wash throws and blankets</p>
+      <p style={RowStyle}>Clean and organize closets and under sinks</p>
     </Row>
 
-    
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListCheckDoorsSecured"
+        name="taskListCheckDoorsSecured"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Check doors (secured)</p>
+    </Row>
+
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListCleanOven"
+        name="taskListCleanOven"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Clean oven and sides of oven</p>
+    </Row>
+
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListDustPicFramesPlasticPlants"
+        name="taskListDustPicFramesPlasticPlants"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Dust picture frames and plastic plants</p>
+    </Row>
+
+    <hr/>
+    <Row>
+    <input checked
+        id="taskListSpotCleanWalls"
+        name="taskListSpotCleanWalls"
+        type="checkbox"
+        onChange={formik.handleChange}
+        value={formik.values.checked}
+        style={RowStyle}
+        />
+      <p style={RowStyle}>Spot clean walls</p>
+    </Row>
 
     <hr/>
     
@@ -448,8 +433,8 @@ const SignupForm = () => {
   );
 };
 
-function MorningTasks() {
+function EveningTasks() {
   return <SignupForm />;
 }
 
-export default MorningTasks;
+export default EveningTasks;

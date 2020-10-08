@@ -22,6 +22,7 @@ import EmployeeAdd from '../src/components/Employees/EmployeeAdd';
 import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeOrientation';
 import MorningTasks from './components/DailyTasks/MorningTasks';
 import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
+import EveningTasks from './components/DailyTasks/EveningTasks';
 
 
 
@@ -56,6 +57,7 @@ class App extends Component {
             <Route exact path="/employeeorientation" component={EmployeeOrientation}/>
             <Route exact path="/morningtasks" component={MorningTasks}/>
             <Route exact path="/afternoontasks" component={AfternoonTasks}/>
+            <Route exact path="/eveningtasks" component={EveningTasks}/>
             
             
             

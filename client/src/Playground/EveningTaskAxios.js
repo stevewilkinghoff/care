@@ -87,7 +87,7 @@ export default class DailyTasks extends React.Component {
         taskListSignOff: this.state.taskListSignOff
         };
 
-    axios.post(`http://localhost:4001/api/dailytasksadd`, { dailytasks })
+    axios.post(`http://localhost:4001/api/eveningtasksadd`, { dailytasks })
       .then(res => {
         console.log(res);
         console.log(res.data);

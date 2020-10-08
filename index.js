@@ -15,6 +15,7 @@ const assessmentSchema = require('./Users/assessmentsmodel');
 const employeeSchema = require('./Users/Employees/employeemodel');
 const morningtasksSchema = require('./Users/DailyTasks/morningstasksmodel');
 const afternoontasksSchema = require('./Users/DailyTasks/afternoontasksmodel');
+const eveningtasksSchema = require('./Users/DailyTasks/eveningtasksmodel');
 
 
 const cors = require('cors');
@@ -213,7 +214,9 @@ const StaffMemberSchema = mongoose.employeeSchema;
 
 const MorningTasksSchema = mongoose.morningtasksSchema;
 
-const AfternoonTasksSchema = mongoose.afternoontaskSchema;
+const AfternoonTasksSchema = mongoose.afternoontasksSchema;
+
+const EveningTasksSchema = mongoose.eveningtasksSchema;
 
 const StaffOrientationSchema = mongoose.Schema({
   orientHowToCreateOwnAccount:Boolean,
@@ -280,7 +283,8 @@ const Assessment = mongoose.model("Assessment", AssessmentSchema, 'assessments')
 const EmployeeAdd = mongoose.model("Employee", StaffMemberSchema, 'employees');
 const StaffOrientationAdd = mongoose.model("Orientation", StaffOrientationSchema, 'orientations');
 const MorningTaskAdd = mongoose.model("MorningTasks", MorningTasksSchema, 'dailytasks');
-const AfternoonTaskAdd = mongoose.model("AfternoonTasks", AfternoonTasksSchema, 'dailytasks')
+const AfternoonTaskAdd = mongoose.model("AfternoonTasks", AfternoonTasksSchema, 'dailytasks');
+const EveningTaskAdd = mongoose.model("EveningTasks", EveningTasksSchema, 'dailytasks');
 
 
 // Create a route for morninglist api posts
@@ -538,7 +542,7 @@ app.post('/api/dailytasksadd', (req, res) => {
   });
 
   // Create a route for Afternoon Tasks Morning add api posts
-app.post('/api/dailytasksadd', (req, res) => {
+app.post('/api/afternoontasksadd', (req, res) => {
   console.log(req.body);
   const note = new AfternoonTaskAdd({
       taskListDate: req.body.taskListDate,
@@ -565,6 +569,41 @@ app.post('/api/dailytasksadd', (req, res) => {
       taskListCommunicationBookTexted: req.body.taskListCommunicationBookTexted,
       taskListCleanOrganizeFridge: req.body.taskListCleanOrganizeFridge,
       taskListWashThrowsBlankets: req.body.taskListWashThrowsBlankets,
+      taskListSignOff: req.body.taskListSignOff
+    });
+  note.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.send(e);
+  })
+});
+
+ // Create a route for Afternoon Tasks Morning add api posts
+ app.post('/api/eveningtasksadd', (req, res) => {
+  console.log(req.body);
+  const note = new EveningTaskAdd({
+      taskListDate: req.body.taskListDate,
+      taskListShift: req.body.taskListShift,
+      taskListStaffName: req.body.taskListStaffName,
+      taskListCareForResidents: req.body.taskListCareForResidents,
+      taskListAdministerMedicine: req.body.taskListAdministerMedicine,
+      taskListSweepVacMop: req.body.taskListSweepVacMop,
+      taskListActivityMenuBoards: req.body.taskListActivities,
+      taskListCleanSanitizeBathTubToiletCountersMirror: req.body.taskListCleanSanitizeBathTubToiletCountersMirror,
+      taskListStockPaperTowelToiletPaperSoaps: req.body.taskListStockPaperTowelToiletPaperSoaps,
+      taskListSanitizeDoorKnobsSwitchesCounterTopsEtc: req.body.taskListSanitizeDoorKnobsSwitchesCounterTopsEtc,
+      taskListDoLaundry: req.body.taskListDoLaundry,
+      taskListUnloadDishwasher: req.body.taskListUnloadDishwasher,
+      taskListCleanKitchen: req.body.taskListCleanKitchen,
+      taskListEnterMaintNeeded: req.body.taskListEnterMaintNeeded,
+      taskListCommunicationNoted: req.body.taskListCommunicationNoted,
+      taskListNoteSuppliesNeeded: req.body.taskListNoteSuppliesNeeded,
+      taskListDustPicFrames: req.body.taskListDustPicFrames,
+      taskListCleanOrganizeClosetsAndUnderSinks: req.body.taskListCleanOrganizeClosetsAndUnderSinks,
+      taskListCheckDoorsSecured: req.body.taskListCheckDoorsSecured,
+      taskListCleanOven: req.body.taskListCleanOven,
+      taskListDustPicFramesPlasticPlants: req.body.taskListDustPicFramesPlasticPlants,
+      taskListSpotCleanWalls: req.body.taskListSpotCleanWalls,
       taskListSignOff: req.body.taskListSignOff
     });
   note.save().then((doc) => {
