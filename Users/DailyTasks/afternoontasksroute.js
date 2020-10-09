@@ -11,7 +11,7 @@ const getAfternoonTasks = async (req, res, next) => {
     );
     return next(error);
   }
-  res.json({ afternoontasks: afternoontasks.map(task => task.toObject({ getters: true })) });
+  res.json({ afternoon: afternoontasks.map(task => task.toObject({ getters: true })) });
 };
 
 exports.getAfternoonTasks = getAfternoonTasks;

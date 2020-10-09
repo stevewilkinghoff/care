@@ -41,7 +41,7 @@ const Appy1 = () => {
 
     return (
         <>
-        <h1 id="title">React Table</h1>
+        <h1 id="title">Residents</h1>
         <table id="residents">
             <thead>
                 <tr>{renderHeader()}</tr>

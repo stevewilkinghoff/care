@@ -16,6 +16,7 @@ const employeeSchema = require('./Users/Employees/employeemodel');
 const morningtasksSchema = require('./Users/DailyTasks/morningstasksmodel');
 const afternoontasksSchema = require('./Users/DailyTasks/afternoontasksmodel');
 const eveningtasksSchema = require('./Users/DailyTasks/eveningtasksmodel');
+const dailyTaskHistory = require('./Users/DailyTasks/dailytasksroute');
 
 
 const cors = require('cors');
@@ -55,7 +56,8 @@ app.use('/api/listassessments', assessmentRoutes);
 app.use('/api/listemployees', employeeRoutes);
 // Setup route to list orientation
 app.use('/api/listemployeeorientations', employeeOrientationRoutes);
-// Setup route to list
+// Setup route to list daily task history
+app.use('/api/dailytaskhistory', dailyTaskHistory);
 
 app.use((error, req, res, next) => {
     if(res.headerSent) {

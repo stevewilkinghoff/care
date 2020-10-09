@@ -25,6 +25,8 @@ import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
 import EveningTasks from './components/DailyTasks/EveningTasks';
 import Cottages from './components/Cotages';
 import DailyTasksPage from './components/Pages/DailyTasksPage';
+import EntryPage from './components/Pages/MainPage';
+import GetDailyTaskHistory from '../src/components/DailyTasks/GetDailyTasks';
 
 
 
@@ -42,7 +44,7 @@ class App extends Component {
        <BrowserRouter>
         <div>
             <Header/>
-            <Route exact path="/" component= {Landing} />
+            <Route exact path="/" component= {EntryPage} />
             <Route exact path="/newresident" component={NewResident}/>
             <Route exact path="/careplan" component={ResCarePlan}/>
             <Route exact path="/morningchecklist" component={MorningCareList}/>
@@ -62,6 +64,7 @@ class App extends Component {
             <Route exact path="/eveningtasks" component={EveningTasks}/>
             <Route exact path="/cottages" component={Cottages}/>
             <Route exact path="/dailytaskspage" component={DailyTasksPage}/>
+            <Route exact path="/getdailytaskhistory" component={GetDailyTaskHistory}/>
             
             
             

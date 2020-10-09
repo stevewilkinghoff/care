@@ -1,0 +1,88 @@
+const mongoose = require('mongoose');
+//const uniqueValidator = require('mongoose-unique-validator');
+
+const Schema = mongoose.Schema;
+
+const DailyTasksSchema = mongoose.Schema({
+    taskListDate: Date,
+    taskListShift:String,
+    taskListStaffName: String,
+    taskListCareForResidents: Boolean,
+    taskListAdministerMedicine:Boolean,
+    taskListScheduledShowersWaterTempTest:Boolean,
+    taskListScheduledRoomCleaning:Boolean,
+    taskListGrooming:Boolean,
+    taskListResidentLaundry:Boolean,
+    taskListActivities:Boolean,
+    taskListDailyNotes:Boolean,
+    taskListPrepBreakfast:Boolean,
+    taskListPrepLunch:Boolean,
+    taskListPrepSnack:Boolean,
+    taskListSanitizeCountersTable:Boolean,
+    taskListSaltStepsAndShovel:Boolean,
+    taskListEnterMaintNeeded:Boolean,
+    taskListCommunicationNoted:Boolean,
+    taskListCheckPerimeterForHazards:Boolean,
+    taskListCheckPerimeterForMaintNeeded:Boolean,
+    taskListCheckDoorsSecured:Boolean,
+    taskListSignOff:Boolean,
+    taskListDate: Date,
+    taskListShift:String,
+    taskListStaffName: String,
+    taskListCareForResidents: String,
+    taskListAdministerMedicine:Boolean,
+    taskListScheduledShowersWaterTempTest:Boolean,
+    taskListScheduledRoomCleaning:Boolean,
+    taskListGrooming:Boolean,
+    taskListResidentLaundry:Boolean,
+    taskListActivities:Boolean,
+    taskListDailyNotes:Boolean,
+    taskListPrepDinner:Boolean,
+    taskListPrepLunch:Boolean,
+    taskListSanitizeCountersTable:Boolean,
+    taskListSweepVacMop:Boolean,
+    taskListCleanSanitizeBathTubToiletCountersMirror:Boolean,
+    taskListStockPaperTowerToiletPaperSoaps:Boolean,
+    taskListCommunicationNoted:Boolean,
+    taskListCheckDoorsSecured:Boolean,
+    taskListDoLaundry:Boolean,
+    taskListUnloadDishwasher:Boolean,
+    taskListEnterMaintNeeded:Boolean,
+    taskListCommunicationNoted:Boolean,
+    taskListCommunicationBookTexted:Boolean,
+    taskListCleanOrganizeFridge:Boolean,
+    taskListWashThrowsBlankets:Boolean,
+    taskListSignOff:Boolean,
+    taskListDate: Date,
+    taskListShift:String,
+    taskListStaffName: String,
+    taskListCareForResidents: Boolean,
+    taskListAdministerMedicine:Boolean,
+    taskListSanitizeCountersTable:Boolean,
+    taskListSweepVacMop:Boolean,
+    taskListActivityMenuBoards:Boolean,
+    taskListCleanSanitizeBathTubToiletCountersMirror: Boolean,
+    taskListStockPaperTowelToiletPaperSoaps:Boolean,
+    taskListSanitizeDoorKnobsSwitchesCounterTopsEtc: Boolean,
+    taskListDoLaundry:Boolean,
+    taskListUnloadDishwasher:Boolean,
+    taskListCleanKitchen: Boolean,
+    taskListEnterMaintNeeded:Boolean,
+    taskListCommunicationNoted:Boolean,
+    taskListNoteSuppliesNeeded: Boolean,
+    taskListDustPicFrames: Boolean,
+    taskListCleanOrganizeClosetsAndUnderSinks: Boolean,
+    taskListCheckDoorsSecured:Boolean,
+    taskListCleanOven: Boolean,
+    taskListDustPicFramesPlasticPlants: Boolean,
+    taskListSpotCleanWalls:Boolean,
+    taskListSignOff:Boolean
+
+
+
+    }, {
+  timestamps: true
+});
+
+//userSchema.plugin(uniqueValidator);
+module.exports = mongoose.model('DailyTasks', DailyTasksSchema);

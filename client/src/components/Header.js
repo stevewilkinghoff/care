@@ -33,13 +33,14 @@ class Header extends React.Component {
                 <NavDropdown.Divider />
             </NavDropdown>
             <NavDropdown title="Employees" id="basic-nav-dropdown">
-            <NavDropdown title="test" id="basic-nav-dropdown"></NavDropdown>
                 <NavDropdown.Item href="/employeeadd">Add Employee</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/employeeorientation">Employee Orientation</NavDropdown.Item>
                 <NavDropdown.Divider />
             </NavDropdown>
-            <Nav.Link href="/cottages">Cottages</Nav.Link>
+            <NavDropdown title="Locations" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/cottages">Willow</NavDropdown.Item>
+            </NavDropdown>
             </Nav>
             </Navbar>
             </>
