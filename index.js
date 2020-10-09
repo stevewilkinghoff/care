@@ -78,7 +78,8 @@ app.get('/', (req, res) => {
 
 if (process.env.NODE_ENV==='production'){
     // Express will serve up production assets
-    app.use(express.static('client/build'));
+    //app.use(express.static('client/build')); (from Maximillian)
+    app.use(express.static(path.join(__dirname, 'build')));
 
     // Express will serve up html file if it doesnt' recognize route
     const path = require('path');
