@@ -6,27 +6,69 @@ export default class AfternoonTasks extends React.Component {
     taskListDate: '',
     taskListShift:'',
     taskListStaffName: '',
-    taskListCareForResidents: '',
-    taskListAdministerMedicine: '',
-    taskListScheduledShowersWaterTempTest: '',
-    taskListScheduledRoomCleaning: '',
-    taskListGrooming: '',
-    taskListResidentLaundry: '',
-    taskListActivities: '',
-    taskListDailyNotes: '',
-    taskListPrepDinner: '',
-    taskListSanitizeCountersTable: '',
-    taskListSweepVacMop: '',
-    taskListCleanSanitizeBathTubToiletCountersMirror: '',
-    taskListStockPaperTowerToiletPaperSoaps: '',
-    taskListCheckDoorsSecured: '',
-    taskListDoLaundry: '',
-    taskListUnloadDishwasher: '',
-    taskListEnterMaintNeeded: '',
-    taskListCommunicationNoted: '',
-    taskListCommunicationBookTexted: '',
-    taskListCleanOrganizeFridge: '',
-    taskListWashThrowsBlankets: '',    
+    taskListCareForResidents:{
+      name: 'Care for residents',
+      value: true},
+    taskListAdministerMedicine:{
+      name: 'Administer medicine',
+      value:true},
+    taskListScheduledShowersWaterTempTest:{
+      name: "Scheduled showers and water temp test",
+      value: true},
+    taskListScheduledRoomCleaning:{
+      name: "Scheduled room cleaning",
+      value: true},
+    taskListGrooming: {
+      name: "Grooming",
+      value: true},
+    taskListResidentLaundry:{
+      name: "Resident laundry (clean lint trap)",
+      value: true},
+    taskListActivities:{
+      name: "Activities",
+      value: true},
+    taskListDailyNotes:{
+      name: "Daily notes",
+      value: true},
+    taskListPrepDinner:{
+      name: "Prepare dinner",
+      value: true},
+    taskListSanitizeCountersTable:{
+      name: "Sanitize counters and table",
+      value: true},
+    taskListSweepVacMop:{
+      name: "Sweep, vacuum and mop floors",
+      value: true},
+    taskListCleanSanitizeBathTubToiletCountersMirror:{
+      name: "Clean and sanitize bathrooms, tub, toilet, counters, mirror",
+      value: true},
+    taskListStockPaperTowerToiletPaperSoaps:{
+      name: "Stock paper towel, toilet paper, refill paper",
+      value: true},
+    taskListCheckDoorsSecured:{
+      name: "Check doors (secured)",
+      value: true},
+    taskListDoLaundry:{
+      name: "Do laundry (clean lint trap)",
+      value: true},
+    taskListUnloadDishwasher:{
+      name: "Unload dishwasher (if needed)",
+      value: true},
+    taskListEnterMaintNeeded:{
+      name: "Enter maintenance needed",
+      value: true},
+    taskListCommunicationNoted:{
+      name: "Communication noted",
+      value: true},
+    taskListCommunicationBookTexted:{
+      name: "Communication book texted",
+      value: true},
+    taskListCleanOrganizeFridge:{
+      name: "Clean and organize fridge",
+      value: true},
+    taskListWashThrowsBlankets:{
+      name: "Wash throws and blankets",
+      value: true},    
     taskListSignOff: ''
    }
 
@@ -35,7 +77,10 @@ export default class AfternoonTasks extends React.Component {
     taskListDate: event.target.value,
     taskListShift: event.target.value,
     taskListStaffName: event.target.value,
-    taskListCareForResidents: event.target.value,
+    taskListCareForResidents:{
+      name:event.target.value,
+      value:event.target.value
+      },
     taskListAdministerMedicine: event.target.value,
     taskListScheduledShowersWaterTempTest: event.target.value,
     taskListScheduledRoomCleaning: event.target.value,
@@ -66,7 +111,10 @@ export default class AfternoonTasks extends React.Component {
         taskListDate: this.state.taskListDate,
         taskListShift: this.state.taskListShift,
         taskListStaffName: this.state.taskListStaffName,
-        taskListCareForResidents: this.state.taskListCareForResidents,
+        taskListCareForResidents:{
+          name:this.state.taskListCareForResidents.name,
+          value:this.state.taskListCareForResidents.value
+        },
         taskListAdministerMedicine: this.state.taskListAdministerMedicine,
         taskListScheduledShowersWaterTempTest: this.state.taskListScheduledShowersWaterTempTest,
         taskListScheduledRoomCleaning: this.state.taskListScheduledRoomCleaning,

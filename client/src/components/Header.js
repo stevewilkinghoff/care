@@ -40,6 +40,7 @@ class Header extends React.Component {
             </NavDropdown>
             <NavDropdown title="Locations" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/cottages">Willow</NavDropdown.Item>
+                <NavDropdown.Item href="/spruce">Spruce</NavDropdown.Item>
             </NavDropdown>
             </Nav>
             </Navbar>

@@ -12,6 +12,7 @@ import Users from './components/ResidentSetUp/Users';
 import AppFuck from './components/ResidentSetUp/UserRender';
 import Shitty from './Users/Shitty';
 import Appy from './Users/ResidentsPage';
+//import NestedExample from './components/DailyTasks/AfternoonTasksTest';
 
 ReactDOM.render(
   <React.StrictMode>

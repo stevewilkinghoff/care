@@ -13,21 +13,23 @@ const GetDailyTaskHistory = () => {
                 'http://localhost:4001/api/dailytaskhistory',
                
         );
-        setData(result.data);
-        console.log(result)
+        setData(result.data) ;
+        console.log((JSON.stringify(result.data, null, 2)));
     };
-        fetchData();
+        fetchData() ;
     } ,[]);
+    console.log(data);
 
         const renderHeader = () =>{
-            let headerElement = ['Date', 'Name', 'Signoff']
-
+            let headerElement = ['Date', 'Shift', 'Care', 'SignOff' ,'Care for res', 'Admin meds', 'Shower & water temp tests','Scheduled room cleaning']
+            
             return headerElement.map((key, index) => {
                 return <th key={index}>{key} </th>
          })
         }
 
-        const renderBody = () => {
+       const renderBody = () => {
+            
             return data && data.dailytasks.map(({_id, taskListDate, taskListStaffName}) => {
                 
                 return (
@@ -42,19 +44,37 @@ const GetDailyTaskHistory = () => {
         }
 
         const renderObject = () => {
+            const checkTrue = (item) => {
+                if (item===true){
+                    return(item.toString());
+                }
+            }
             //return data && data.dailytasks.map(({_id, dailytasks}) => {
-              return data && data.dailytasks.map(({_id, taskListDate, taskListCareForResidents, taskListStaffName}) => {   
-                return (
+              return data && data.dailytasks.map(({_id, taskListDate, taskListStaffName, taskListCareForResidents, taskListShift, taskListAdministerMedicine, taskListScheduledShowersWaterTempTest, taskListSignOff, taskListScheduledRoomCleaning},item) => {   
+              
+               
+              return (
                     <tr key={_id}>
                         
                 <td>{taskListDate}</td>
-                <td>{taskListStaffName}</td>
-                <td>{taskListCareForResidents}</td>
+                <td>{taskListShift}</td>
+                <td>{taskListCareForResidents.name}</td>
+                <td>{taskListSignOff}</td>
+                <td>{taskListAdministerMedicine}</td>
+                <td>{taskListScheduledShowersWaterTempTest}</td>
                 
+                                
                     </tr>
                 )
             })
-        }
+
+            }
+
+            const renderShit = () => {
+            data.dailytasks.map(({item})=>{
+              return (<div>{item.taskListCareForResidents()}</div>);
+            })}
+          
 
         
     return (
@@ -65,7 +85,7 @@ const GetDailyTaskHistory = () => {
                 <tr>{renderHeader()}</tr>
             </thead>
             <tbody>
-                {renderObject()}
+                {renderBody()}
             </tbody>
         </table>
         </>

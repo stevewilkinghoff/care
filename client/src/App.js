@@ -24,9 +24,11 @@ import MorningTasks from './components/DailyTasks/MorningTasks';
 import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
 import EveningTasks from './components/DailyTasks/EveningTasks';
 import Cottages from './components/Cotages';
+import SpruceCottage from './components/Cottages/SpruceCottage';
 import DailyTasksPage from './components/Pages/DailyTasksPage';
 import EntryPage from './components/Pages/MainPage';
 import GetDailyTaskHistory from '../src/components/DailyTasks/GetDailyTasks';
+import NestedExample from './components/DailyTasks/AfternoonTasksTest';
 
 
 
@@ -63,8 +65,10 @@ class App extends Component {
             <Route exact path="/afternoontasks" component={AfternoonTasks}/>
             <Route exact path="/eveningtasks" component={EveningTasks}/>
             <Route exact path="/cottages" component={Cottages}/>
+            <Route exact path="/spruce" component={SpruceCottage}/>
             <Route exact path="/dailytaskspage" component={DailyTasksPage}/>
             <Route exact path="/getdailytaskhistory" component={GetDailyTaskHistory}/>
+           
             
             
             

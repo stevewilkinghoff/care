@@ -12,27 +12,69 @@ const SignupForm = () => {
         taskListDate: '',
         taskListShift: 'Afternoon',
         taskListStaffName: '',
-        taskListCareForResidents: true,
-        taskListAdministerMedicine: true,
-        taskListScheduledShowersWaterTempTest: true,
-        taskListScheduledRoomCleaning: true,
-        taskListGrooming: true,
-        taskListResidentLaundry: true,
-        taskListActivities: true,
-        taskListDailyNotes: true,
-        taskListPrepDinner: true,
-        taskListSanitizeCountersTable: true,
-        taskListSweepVacMop: true,
-        taskListCleanSanitizeBathTubToiletCountersMirror: true,
-        taskListStockPaperTowelToiletPaperSoaps: true,
-        taskListCheckDoorsSecured: true,
-        taskListDoLaundry: true,
-        taskListUnloadDishwasher: true,
-        taskListEnterMaintNeeded: true,
-        taskListCommunicationNoted: true,
-        taskListCommunicationBookTexted: true,
-        taskListCleanOrganizeFridge: true,
-        taskListWashThrowsBlankets: true,
+        taskListCareForResidents:{
+          name:"Care for residents",
+          value: true},
+        taskListAdministerMedicine:{
+          name: "Administer medicine",
+          value: true},
+        taskListScheduledShowersWaterTempTest: {
+          name: "Scheduled showers and water temp test",
+          value: true},
+        taskListScheduledRoomCleaning: {
+          name: "Scheduled room cleaning",
+          value: true},
+        taskListGrooming:{
+          name: "Grooming",
+          value: true},
+        taskListResidentLaundry:{
+          name: "Resident laundry (clean lint trap)",
+          value: true},
+        taskListActivities:{
+          name: "Activities",
+          value: true},
+        taskListDailyNotes:{
+          name: "Daily notes",
+          value: true},
+        taskListPrepDinner:{
+          name: "Prepare dinner",
+          value: true},
+        taskListSanitizeCountersTable:{
+          name: "Sanitize counters and table",
+          value: true},
+        taskListSweepVacMop:{
+          name: "Sweep, vacuum and mop floors",
+          value: true},
+        taskListCleanSanitizeBathTubToiletCountersMirror:{
+          name: "Clean and sanitize bathrooms, tub, toilet, counters, mirror",
+          value: true},
+        taskListStockPaperTowelToiletPaperSoaps:{
+          name: "Stock paper towel, toilet paper, refill paper",
+          value: true},
+        taskListCheckDoorsSecured:{
+          name: "Check doors (secured)",
+          value: true},
+        taskListDoLaundry:{
+          name: "Do laundry (clean lint trap)",
+          value: true},
+        taskListUnloadDishwasher:{
+          name: "Unload dishwasher (if needed)",
+          value: true},
+        taskListEnterMaintNeeded:{
+          name: "Enter maintenance needed",
+          value: true},
+        taskListCommunicationNoted:{
+          name: "Communication noted",
+          value: true},
+        taskListCommunicationBookTexted:{
+          name: "Communication book texted",
+          value: true},
+        taskListCleanOrganizeFridge:{
+          name: "Clean and organize fridge",
+          value: true},
+        taskListWashThrowsBlankets:{
+          name: "Wash throws and blankets",
+          value: true},
         taskListSignOff: true           
         },
     onSubmit: values => {
@@ -68,6 +110,7 @@ const SignupForm = () => {
           url: "http://localhost:4001/api/afternoontasksadd",
           data: values
         })
+        console.log(values)
       //.then(res => {
       //  console.log(res); // this returns the callback from the post
       //  console.log(values);  // this returns all the values from form
@@ -126,12 +169,13 @@ const SignupForm = () => {
     <hr/>
     <Row>
     <input checked
-        id="taskListCareForResidents"
-        name="taskListCareForResidents"
+        id="taskListCareForResidentsName"
+        name="taskListCareForResidentsName"
         type="checkbox"
         onChange={formik.handleChange}
         value={formik.values.checked}
         style={RowStyle}
+        
         />
       <p style={RowStyle}>Care for residents</p>
     </Row>
@@ -450,8 +494,8 @@ const SignupForm = () => {
   );
 };
 
-function MorningTasks() {
+function AfternoonTasks() {
   return <SignupForm />;
 }
 
-export default MorningTasks;
+export default AfternoonTasks;
