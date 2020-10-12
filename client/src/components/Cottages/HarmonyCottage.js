@@ -13,20 +13,20 @@ import StartNewResidentCard from '../Cards/StartNewResidentCard';
 import {BiCheckSquare} from 'react-icons/bi';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 const JumboTron = Jumbotron;
 
 
-class SpruceCottage extends React.Component {
+class HarmonyCottage extends React.Component {
     render() {
         return(
         <>
         <JumboTron fluid style={{
             backgroundImage: "url(" + "https://my.carecottages.ca/wp-content/uploads/2018/03/AdobeStock_95578600-e1520291308344.jpeg" + ")", backgroundRepeat : 'no-repeat', width:1000, height:300}} >
-                <img src={"https://my.carecottages.ca/wp-content/uploads/gravity_forms/15-5ed52046c7274596f0fb75ef1cd73f3b/02/2018/Spruce-Logo-New-Transparent.png"} style={{mode:'fit', width:300, height:200}}></img>
+                <img src={"https://my.carecottages.ca/index.php?gf-download=07%2F2020%2FAsset-2512.png&form-id=15&field-id=13&hash=a28dbcf44ab9951db2482ff35cca01bd64c14c7e9f6a8cc9f6b07db8745169d5"} style={{mode:'fit', width:300, height:200}}></img>
         <div>
         <br/>
         <br/>
@@ -35,7 +35,7 @@ class SpruceCottage extends React.Component {
         </Container>
         </JumboTron>
         <Row>
-        <Col>
+            <Col>
         <DailyTaskCard/>
         </Col>
         <Col>
@@ -48,4 +48,4 @@ class SpruceCottage extends React.Component {
 }
 };
 
-export default SpruceCottage;
+export default HarmonyCottage;

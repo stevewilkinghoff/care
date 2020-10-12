@@ -23,12 +23,17 @@ import EmployeeOrientation from '../src/components/EmployeeOrientation/EmployeeO
 import MorningTasks from './components/DailyTasks/MorningTasks';
 import AfternoonTasks from './components/DailyTasks/AfternoonTasks';
 import EveningTasks from './components/DailyTasks/EveningTasks';
-import Cottages from './components/Cotages';
+import WillowCottage from './components/Cottages/WillowCottage';
 import SpruceCottage from './components/Cottages/SpruceCottage';
+import MapleCottage from './components/Cottages/MapleCottage';
+import HarmonyCottage from './components/Cottages/HarmonyCottage';
 import DailyTasksPage from './components/Pages/DailyTasksPage';
 import EntryPage from './components/Pages/MainPage';
 import GetDailyTaskHistory from '../src/components/DailyTasks/GetDailyTasks';
 import NestedExample from './components/DailyTasks/AfternoonTasksTest';
+import RentAgreePage from './components/ResidentApplicationProcess/RentalAgreePage';
+import TestForm from './components/ResidentApplicationProcess/TestForm';
+import ResidentInitiate from './components/ResidentApplicationProcess/ResidentInitiate';
 
 
 
@@ -64,10 +69,15 @@ class App extends Component {
             <Route exact path="/morningtasks" component={MorningTasks}/>
             <Route exact path="/afternoontasks" component={AfternoonTasks}/>
             <Route exact path="/eveningtasks" component={EveningTasks}/>
-            <Route exact path="/cottages" component={Cottages}/>
+            <Route exact path="/willow" component={WillowCottage}/>
             <Route exact path="/spruce" component={SpruceCottage}/>
+            <Route exact path="/maple" component={MapleCottage}/>
+            <Route exact path="/harmony" component={HarmonyCottage}/>
             <Route exact path="/dailytaskspage" component={DailyTasksPage}/>
             <Route exact path="/getdailytaskhistory" component={GetDailyTaskHistory}/>
+            <Route exact path="/rentagreepage" component={RentAgreePage}/>
+            <Route exact path="/testrent" component={TestForm}/>
+            <Route exact path="/residentinitiate" component={ResidentInitiate}/>
            
             
             
